@@ -1,0 +1,46 @@
+<div style="width: 100%;height: 10%; text-align: center; float: centre;border:2px solid rgb(250, 225, 4); background-color: rgb(8, 155, 253);">
+
+  <header>
+
+    <h2> <img src="assets/logo.png" align="left" style="width:50px;height:50px;"> Book Store</h2>
+  </header>
+  </div>
+  <div style="width: 100%;height:80%;">
+    <mat-toolbar color="primary">
+
+
+      <mat-toolbar-row>
+
+          <button mat-button (click)="opened=!opened" style="color: rgb(255, 255, 255);"><mat-icon>menu</mat-icon> Menu </button>
+          <a routerLink="/homecom"><mat-icon>home</mat-icon> </a>
+
+      </mat-toolbar-row>
+
+
+      </mat-toolbar>
+      <mat-sidenav-container>
+        <mat-sidenav [(opened)]="opened" mode="side">
+         <mat-list>
+          <mat-list-item><a routerLink="/create-customer">Add Customer</a></mat-list-item>
+          <mat-list-item><a routerLink="/fetch-customers-by-id">Fetch Customer By ID</a></mat-list-item>
+          <mat-list-item><a routerLink="/fetch-customers">Fetch All Customers</a></mat-list-item>
+          <mat-list-item><a routerLink="/update">Update Customers Info</a></mat-list-item>
+         </mat-list>
+        </mat-sidenav>
+        <mat-sidenav-content>
+
+          <router-outlet></router-outlet>
+      </mat-sidenav-content>
+      </mat-sidenav-container>
+
+  </div>
+  <div >
+
+    <footer style="width: 100%;height: 15%; text-align: center; float: centre;border:2px solid rgb(7, 6, 0); background-color: rgb(0, 109, 182);">
+
+      <b>My Mobile Shop</b><br>Nehru Road,<br>Anna Nagar,<br>Madurai.
+    </footer>
+  </div>
+
+
+

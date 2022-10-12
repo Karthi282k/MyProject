@@ -1,0 +1,14 @@
+.mat-radio-button ~ .mat-radio-button {
+  margin-left: 16px;
+}
+.form{
+  background-image: url(bg.jpg);
+}
+input, select, textarea{
+  color: black;
+  font-weight: bolder;
+}
+textarea:focus, input:focus{
+  color: black;
+  font-weight: bolder;
+}

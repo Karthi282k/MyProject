@@ -1,0 +1,101 @@
+
+
+
+<form (ngSubmit)="onSubmit()" class="form" #customerForm="ngForm">
+      <div class="form-group" style="text-align: center;">
+
+        <mat-form-field appearance="fill" style="background-color: rgb(0, 255, 21);">
+        <mat-label style="color:black;" for="name"><b> <h3> Name </h3>  </b> </mat-label>
+        <input matInput type="text" style="background-color: rgb(0, 255, 21);" [(ngModel)]="customer.cxName"
+          class="form-control"
+          id="name"
+          name="name"
+          placeholder="Enter Customer Name"
+          required #name="ngModel">
+        </mat-form-field>
+      </div>
+
+
+
+
+
+      <div class="form-group" style="text-align: center;">
+        <mat-form-field appearance="fill" style="background-color: rgb(0, 255, 21);">
+          <mat-label style="color:black;" for="mail"><b> <h3> Mail </h3>  </b> </mat-label>
+        <input matInput type="text" style="background-color: rgb(0, 255, 21);" [(ngModel)]="customer.mail"
+          class="form-control"
+          id="mail"
+          name="mail"
+          [(ngModel)]="customer.mail"
+          placeholder="Enter Mail"
+          required #mail="ngModel"
+          pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$">
+      </mat-form-field>
+      </div>
+
+      <div *ngIf="mail.invalid" class="alert">
+        <div *ngIf="mail.errors?.['pattern']" class="alert alert-danger">
+      Please Enter Valid Email Address
+        </div>
+
+      </div>
+
+
+
+      <div class="form-group"  style="text-align: center;color: rgb(0, 255, 21);">
+
+        <mat-label style="color:rgb(251, 255, 1);" for="gender"><b> <h3> Gender </h3>  </b> </mat-label>
+
+        <input  type="radio" style="background-color: rgb(0, 255, 21);" [(ngModel)]="customer.gender"
+        class="form-control"
+        id="gender"
+        name="gender"
+        value="m"
+        required #gender="ngModel">Male <input type="radio" style="background-color: rgb(0, 255, 21);" [(ngModel)]="customer.gender"
+        class="form-control"
+        id="gender"
+        name="gender"
+        value="f"
+        required #gender="ngModel">Female
+
+
+
+
+      </div>
+      <br>
+
+      <div class="form-group" style="text-align: center;">
+        <mat-form-field appearance="fill" style="background-color: rgb(0, 255, 21);">
+
+        <mat-label style="color:rgb(10, 10, 0);" for="contactNumber"><b> <h3> Contact Number </h3>  </b> </mat-label>
+        <input type="text" matInput style="background-color: rgb(0, 255, 21);" [(ngModel)]="customer.contactNo"
+          class="form-control"
+          id="contactNo"
+          name="contactNo"
+          [(ngModel)]="customer.contactNo"
+          placeholder="Enter the Your Contact Number"
+          required #contactNo="ngModel"
+          pattern="^[0-9]{10}$">
+        </mat-form-field>
+      </div>
+
+
+<div *ngIf="contactNo.invalid" class="alert">
+  <div *ngIf="contactNo.errors?.['pattern']" class="alert alert-danger">
+Mobile Number Must be Valid
+  </div>
+
+</div>
+
+      <div style="text-align: center;">
+      <button mat-button style="color: rgb(252, 249, 249);" type="submit" [disabled]="!customerForm.form.valid"
+        class="btn btn-info">Submit</button>
+      </div>
+    </form>
+
+    <div style="width: 100%;height: 20%; text-align: center; float: centre;border:2px solid rgb(7, 6, 0); background-color: rgb(0, 109, 182);">
+
+      <footer >
+        <b>My Mobile Shop</b><br>Nehru Road,<br>Anna Nagar,<br>Madurai.
+      </footer>
+    </div>
